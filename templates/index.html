@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+<body>
+    <div class="card bg-dark text-white">
+        <img src="static/images/rainy-img.jpg" class="card-img" alt="dandelion">
+        <div class="card-img-overlay text-center" id="text-card">
+            <h1 class="card-title">Welcome to Weather Alert!</h1>
+            <h5 class="card-text"><span id="info-text">Subscribe me to receive weather alert through email every day.</span></h5>
+            <h5 class="card-text"><span id="info-text">please fill the form below</span></h5>
+
+            <!--Flashes message if user is already a subscriber-->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="flash"><h6>{{ message }}</h6></p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <!--Renders the subscribe form-->
+            <div class="card-img-overlay text-center" id="form-card">
+                {{ render_form(form, novalidate=True, button_map={'save': 'secondary'}) }}
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+{% include 'footer.html' %}
+

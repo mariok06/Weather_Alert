@@ -1,0 +1,75 @@
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    padding-bottom: 20px;
+    color: #EED3D9;
+    text-shadow: 0 0 5px #A9A9A9;
+}
+
+h5 {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+    color: #EED3D9;
+    text-shadow: 0 0 5px #DFD0B8;
+    padding-bottom: 5px;
+}
+
+h6 {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: bold;
+    color: #FF6969;
+    text-shadow: 0 0 6px #151515;
+}
+
+footer {
+    background-color: #222831;
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0px;
+}
+
+#info-text {
+    background-color: #3C486B;
+    border-radius: 10%;
+}
+
+#text-card {
+    padding: 200px;
+    padding-top: 180px;
+}
+
+#form-card {
+    margin: 400px;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    color: #EADBC8;
+    text-shadow: 0 0 5px #31363F;
+    padding-top: 0px;
+}
+
+
+#form-card-2 {
+    margin: 300px;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    color: #EADBC8;
+    text-shadow: 0 0 5px #31363F;
+    padding-top: 0px;
+}
+
+#success-card {
+    color: #A0DEFF;
+    text-shadow: 0 0 5px #5A72A0;
+}
+
+#success-card2 {
+    color: #E1F7F5;
+    text-shadow: 0 0 5px #9AC8CD;
+}
+
