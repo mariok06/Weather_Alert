@@ -87,19 +87,24 @@ def sendmail():
     emails = Emails()
     all_cities = []
     all_emails = []
+    once_a_day = True
 
     # Checks time before emailing
     now = datetime.now()
 
-    if 5 < now.hour < 24:
-        # Retrieves data from the database
-        all_cities = [(row.User, row.location)[0:8:1][1] for row in db.session.query(User, User.location).all()]
-        all_emails = [(row.User, row.email)[0:8:1][1] for row in db.session.query(User, User.email).all()]
-        # Requests location co-ordinates using user location.
-        for i in range(len(all_emails)):
-            emails.send_emails(email=all_emails[i], params=emails.get_geocodes(city=all_cities[i - 1]))
-        return redirect(url_for('subscribe'))
+    while once_a_day:
+        if 5 < now.hour < 7:
+            # Retrieves data from the database
+            all_cities = [(row.User, row.location)[0:8:1][1] for row in db.session.query(User, User.location).all()]
+            all_emails = [(row.User, row.email)[0:8:1][1] for row in db.session.query(User, User.email).all()]
+            # Requests location co-ordinates using user location.
+            for i in range(len(all_emails)):
+                emails.send_emails(email=all_emails[i], params=emails.get_geocodes(city=all_cities[i - 1]))
+            return redirect(url_for('subscribe'))
+        once_a_day = False
 
+    if now.hour == 4:
+        once_a_day = True
     return render_template('sendmail.html')
 
 
